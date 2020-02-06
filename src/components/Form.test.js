@@ -56,7 +56,7 @@ it("renders dropdown button group", () => {
 it("renders dropdown buttons", () => {
   const wrapper = setup();
   const buttonValue = findByTestAttr(wrapper, "component-button");
-  expect(buttonValue.text()).toBe("Annually");
+  expect(buttonValue.find(".button-value").text()).toBe("Annually");
 });
 
 it("changes value state on clicking buttons", () => {
@@ -70,5 +70,5 @@ it("changes value state on clicking buttons", () => {
   const buttonValue = findByTestAttr(wrapper, "component-button");
 
   expect(wrapper.state("buttonValue")).toBe("Weekly");
-  expect(buttonValue.text()).toBe("Weekly");
+  expect(buttonValue.find(".button-value").text()).toBe("Weekly");
 });
